@@ -1,0 +1,31 @@
+{
+  "name": "@aws/openclaw-x402-payments",
+  "version": "1.0.3",
+  "type": "module",
+  "main": "dist/index.js",
+  "dependencies": {
+    "@aws-sdk/client-bedrock-agentcore": "^3.1090.0",
+    "@aws-sdk/client-bedrock-agentcore-control": "^3.1090.0",
+    "typebox": "1.1.39"
+  },
+  "peerDependencies": {
+    "openclaw": ">=2026.3.24-beta.2"
+  },
+  "openclaw": {
+    "extensions": [
+      "./dist/index.js"
+    ],
+    "compat": {
+      "pluginApi": ">=2026.3.24-beta.2",
+      "minGatewayVersion": "2026.3.24-beta.2"
+    },
+    "build": {
+      "openclawVersion": "2026.4.15",
+      "pluginSdkVersion": "2026.3.24-beta.2"
+    }
+  },
+  "devDependencies": {
+    "@types/node": "^26.1.1",
+    "typescript": "^7.0.2"
+  }
+}

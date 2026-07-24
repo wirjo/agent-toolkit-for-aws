@@ -1,0 +1,28 @@
+{
+  "id": "aws-agent-payments",
+  "name": "AWS Agent Payments (x402)",
+  "description": "Enable stateful autonomous agents to pay for x402-paywalled APIs, MCP tools, and web content via microtransactions using AWS AgentCore Payments",
+  "contracts": {
+    "tools": [
+      "get_payment_session_status",
+      "create_payment_session",
+      "get_paid_content",
+      "pay_and_get_header",
+      "setup_x402_payments"
+    ]
+  },
+  "activation": {
+    "onStartup": true
+  },
+  "configSchema": {
+    "type": "object",
+    "properties": {
+      "region": { "type": "string", "default": "us-east-1" },
+      "paymentManagerArn": { "type": "string" },
+      "paymentInstrumentId": { "type": "string" },
+      "userId": { "type": "string" },
+      "networkPreferences": { "type": "array", "items": { "type": "string" } }
+    },
+    "required": ["paymentManagerArn", "paymentInstrumentId", "userId"]
+  }
+}
